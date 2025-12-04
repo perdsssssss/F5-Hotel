@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Hotel Booking System">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>F5 Hotel Booking System</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Taviraj:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="css/linearicons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section other-page">
+        <div class="container-fluid">
+            <div class="inner-header">
+                <div class="logo">
+                    <a href="./home.html" style="font-family: 'Taviraj', serif; font-size: 32px; font-weight: 700; color: #dfa974; text-decoration: none; text-transform: uppercase; letter-spacing: 3px;">F5 HOTEL</a>
+                </div>
+                <div class="top-widget">
+                    <div class="top-info address">
+                        <img src="img/placeholder.png" alt="">
+                        <span>Ayala Center, San Lorenzo, Makati City, Metro Manila, 1223</span>
+                    </div>
+                    <div class="top-info">
+                        <a href="#" id="logoutBtn" style="color: #dfa974; text-decoration: none; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 600;">Logout</a>
+                    </div>
+                </div>
+                <div class="container">
+                    <nav class="main-menu mobile-menu">
+                        <ul>
+                            <li><a href="./home.html">Home</a></li>
+                            <li><a href="./about-us.html">About</a></li>
+                            <li><a href="./rooms.html">Rooms</a></li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Slider Begin -->
+    <div class="hero-slider">
+        <div class="slider-item">
+            <div class="single-slider-item set-bg" data-setbg="img/slider-1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>Where Every Stay Counts!</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="slider-nav">
+                                <a href="#" class="single-slider-nav">
+                                    <img src="img/nav-1.jpg" alt="">
+                                    <div class="nav-text active">
+                                        <p>Pool</p>
+                                    </div>
+                                </a>
+                                <a href="#" class="single-slider-nav">
+                                    <img src="img/nav-2.jpg" alt="">
+                                    <div class="nav-text">
+                                        <p>Sauna</p>
+                                    </div>
+                                </a>
+                                <a href="#" class="single-slider-nav last">
+                                    <img src="img/nav-3.jpg" alt="">
+                                    <div class="nav-text">
+                                        <p>Restaurant</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Slider End -->
+
+    <!-- Room Availability Section Begin -->
+    <section class="room-availability spad">
+        <div class="container">
+            <div class="room-check">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="room-item">
+                            <div class="room-pic-slider room-pic-item owl-carousel">
+                                <div class="room-pic">
+                                    <img src="img/room-slider/room-1.jpg" alt="">
+                                </div>
+                                <div class="room-pic">
+                                    <img src="img/room-slider/room-2.jpg" alt="">
+                                </div>
+                                <div class="room-pic">
+                                    <img src="img/room-slider/room-3.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="room-text">
+                                <div class="room-title">
+                                    <h2>Junior Suite</h2>
+                                    <div class="room-price">
+                                        <span>From</span>
+                                        <h2>₱8,000</h2>
+                                    </div>
+                                </div>
+                                <div class="room-features">
+                                    <div class="room-info">
+                                        <i class="flaticon-019-television"></i>
+                                        <span>Smart TV</span>
+                                    </div>
+                                    <div class="room-info">
+                                        <i class="flaticon-029-wifi"></i>
+                                        <span>High Wi-Fi</span>
+                                    </div>
+                                    <div class="room-info">
+                                        <i class="flaticon-003-air-conditioner"></i>
+                                        <span>AC</span>
+                                    </div>
+                                    <div class="room-info">
+                                        <i class="flaticon-036-parking"></i>
+                                        <span>Parking</span>
+                                    </div>
+                                    <div class="room-info last">
+                                        <i class="flaticon-007-swimming-pool"></i>
+                                        <span>Pool</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="check-form">
+                            <h2>Check Availability</h2>
+                            <form action="#">
+                                <div class="datepicker">
+                                    <div class="date-select">
+                                        <p>From</p>
+                                        <input type="text" class="datepicker-1" value="dd / mm / yyyy">
+                                        <img src="img/calendar.png" alt="">
+                                    </div>
+                                    <div class="date-select to">
+                                        <p>To</p>
+                                        <input type="text" class="datepicker-2" value="dd / mm / yyyy">
+                                        <img src="img/calendar.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="room-quantity">
+                                    <div class="single-quantity">
+                                        <p>Adults</p>
+                                        <div class="pro-qty"><input type="text" value="0"></div>
+                                    </div>
+                                    <div class="single-quantity">
+                                        <p>Children</p>
+                                        <div class="pro-qty"><input type="text" value="0"></div>
+                                    </div>
+                                    <div class="single-quantity last">
+                                        <p>Rooms</p>
+                                        <div class="pro-qty"><input type="text" value="0"></div>
+                                    </div>
+                                </div>
+                                <div class="room-selector">
+                                    <p>Room</p>
+                                    <select class="suit-select">
+                                        <option>Select Room Type</option>
+                                        <option value="">Standard Room</option>
+                                        <option value="">Deluxe Room</option>
+                                        <option value="">Junior Suite</option>
+                                        <option value="">Executive Suite</option>
+                                    </select>
+                                </div>
+                                <button type="button">CHECK Availability <i class="lnr lnr-arrow-right"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-room">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <h2>"At F5 Hotel, we believe that true luxury lies in the details and genuine hospitality."</h2>
+                    </div>
+                </div>
+                <div class="about-para">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p>Welcome to F5 Hotel, your premier destination for luxury accommodation in Makati City. Located in the prestigious Ayala Center, our hotel combines modern elegance with warm Filipino hospitality to create an unforgettable experience for every guest.</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <p>Whether you're visiting for business or leisure, our spacious rooms, world-class amenities, and exceptional service ensure that your stay with us exceeds all expectations. Discover the perfect blend of comfort and sophistication at F5 Hotel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Room Availability Section End -->
+
+
+    <div class="testimonial-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h1>Guest Reviews</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="testimonial-item">
+                        <div class="tab-content">
+                            <div class="tab-pane fade-in active" id="testimonial-1" role="tabpanel">
+                                <div class="single-testimonial-item">
+                                    <span class="test-date">November 15, 2024</span>
+                                    <div class="test-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4>Exceptional Service</h4>
+                                    <p>Our stay at F5 Hotel was absolutely wonderful! The staff went above and beyond to ensure our comfort. The room was spacious and immaculate, and the location in Ayala Center couldn't be more convenient. We'll definitely be back!</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="testimonial-2" role="tabpanel">
+                                <div class="single-testimonial-item">
+                                    <span class="test-date">October 28, 2024</span>
+                                    <div class="test-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4>Perfect Business Stay</h4>
+                                    <p>As a frequent business traveler, I've stayed in many hotels, but F5 Hotel stands out. The Executive Suite was perfect for my needs, with excellent Wi-Fi and a comfortable workspace. The restaurant's breakfast buffet was outstanding.</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="testimonial-3" role="tabpanel">
+                                <div class="single-testimonial-item">
+                                    <span class="test-date">September 12, 2024</span>
+                                    <div class="test-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4>Amazing Amenities</h4>
+                                    <p>The pool and sauna facilities are top-notch! My family and I enjoyed every moment of our vacation. The kids loved the pool, and we appreciated the relaxing sauna. Great value for money!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="testimonial-author-item">
+                        <ul class="nav" role="tablist">
+                            <li>
+                                <a data-toggle="tab" href="#testimonial-1" role="tab" class="show active">
+                                    <div class="author-pic">
+                                        <img src="img/testimonial/author-1.jpg" alt="">
+                                    </div>
+                                    <div class="author-text">
+                                        <h5>Nadine Lustre <span>Manila, PH</span></h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#testimonial-2" role="tab">
+                                    <div class="author-pic">
+                                        <img src="img/testimonial/author-2.jpg" alt="">
+                                    </div>
+                                    <div class="author-text">
+                                        <h5>Jun<span>Seoul, KR</span></h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#testimonial-3" role="tab">
+                                    <div class="author-pic">
+                                        <img src="img/testimonial/author-3.jpg" alt="">
+                                    </div>
+                                    <div class="author-text">
+                                        <h5>Catriona Gray <span>Manila, PH</span></h5>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Follow Instagram Section Begin -->
+    <section class="follow-instagram">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Follow us on Instagram @f5hotel</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Follow Instagram Section End -->
+
+    <!-- Footer Room Pic Section Begin -->
+    <div class="footer-room-pic">
+        <div class="container-fluid">
+            <div class="row">
+                <img src="img/room-footer-pic/room-1.jpg" alt="">
+                <img src="img/room-footer-pic/room-2.jpg" alt="">
+                <img src="img/room-footer-pic/room-3.jpg" alt="">
+                <img src="img/room-footer-pic/room-4.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Footer Room Pic Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-logo">
+                        <a href="#" style="font-family: 'Taviraj', serif; font-size: 28px; font-weight: 700; color: #dfa974; text-decoration: none; text-transform: uppercase; letter-spacing: 3px;">F5 HOTEL</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row pb-50">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h5>Location</h5>
+                        <div class="widget-text">
+                            <i class="lnr lnr-map-marker"></i>
+                            <p>Ayala Center, San Lorenzo, Makati City, Metro Manila, 1223</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h5>Reception</h5>
+                        <div class="widget-text">
+                            <i class="lnr lnr-phone-handset"></i>
+                            <p>+63 2 8354 7219</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h5>Shuttle Service</h5>
+                        <div class="widget-text">
+                            <i class="lnr lnr-phone-handset"></i>
+                            <p>+63 917 842 5593</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="copyright-text">
+                    <center>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | F5 Hotel</center>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    
+    <script>
+    // Check if user is logged in
+    window.onload = function() {
+        const userLoggedIn = sessionStorage.getItem('userLoggedIn');
+        
+        if (!userLoggedIn) {
+            // Redirect to login if not logged in
+            window.location.href = 'login.html';
+        }
+    };
+
+    // Logout functionality with confirmation
+    document.getElementById('logoutBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Show confirmation dialog
+        if (confirm('Are you sure you want to logout?')) {
+            // Clear session data
+            sessionStorage.removeItem('userLoggedIn');
+            sessionStorage.removeItem('username');
+            localStorage.clear();
+            
+            // Redirect to login page
+            window.location.href = 'login.html';
+        }
+    });
+    </script>
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

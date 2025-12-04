@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Hotel Booking System">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>F5 Hotel Booking System</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Taviraj:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="css/linearicons.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/signup.css" type="text/css">
+
+</head>
+
+<body>
+    <div class="register-container">
+        <div class="logo">
+                    <center><a href="./home.html" style="font-family: 'Taviraj', serif; font-size: 60px; font-weight: 700; color: #dfa974; text-decoration: none; text-transform: uppercase; letter-spacing: 3px;">F5 HOTEL</a></center>
+                </div>
+                
+        <h2 class="register-title">Create Account</h2>
+        <p class="register-subtitle">Please fill in all required information</p>
+
+        <div class="success-message" id="successMessage">
+            Account created successfully! Redirecting to login...
+        </div>
+
+        <form id="registerForm">
+            <!-- Personal Information -->
+            <h3 class="section-title">Personal Information</h3>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name <span class="required">*</span></label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+                    <span class="error-message" id="firstNameError">Please enter your first name</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="middleName">Middle Name</label>
+                    <input type="text" id="middleName" name="middleName" placeholder="Enter middle name">
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name <span class="required">*</span></label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required>
+                    <span class="error-message" id="lastNameError">Please enter your last name</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="dateOfBirth">Date of Birth <span class="required">*</span></label>
+                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                <span class="error-message" id="dateOfBirthError">Please enter your date of birth</span>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="section-divider">
+                <h3 class="section-title">Contact Information</h3>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                <span class="error-message" id="emailError">Please enter a valid email address</span>
+            </div>
+
+            <div class="form-group">
+                <label for="contactNumber">Contact Number <span class="required">*</span></label>
+                <input type="tel" id="contactNumber" name="contactNumber" placeholder="+63 912 345 6789" required>
+                <span class="error-message" id="contactNumberError">Please enter a valid contact number</span>
+            </div>
+
+            <!-- Account Information -->
+            <div class="section-divider">
+                <h3 class="section-title">Account Information</h3>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username <span class="required">*</span></label>
+                <input type="text" id="username" name="username" placeholder="Choose a username" required>
+                <span class="error-message" id="usernameError">Username must be at least 4 characters</span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password <span class="required">*</span></label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+                <span class="error-message" id="passwordError">Password must be at least 8 characters</span>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                <span class="error-message" id="confirmPasswordError">Passwords do not match</span>
+            </div>
+
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="termsCheckbox" required>
+                    I hereby confirm that the information I have provided is accurate and true.
+                </label>
+                <span class="error-message" id="termsError">You must agree to the terms and conditions</span>
+            </div>
+
+            <button type="submit" class="register-btn">Create Account</button>
+
+            <div class="login-link">
+                Already have an account? <a href="login.html">Login Here</a>
+            </div>
+        </form>
+    </div>
+
+    <hr><hr><hr> 
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/signup.js"></script>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Hide all error messages
+            document.querySelectorAll('.error-message').forEach(function(msg) {
+                msg.style.display = 'none';
+            });
+            
+            let isValid = true;
+            
+            // Personal Information Validation
+            const firstName = document.getElementById('firstName').value.trim();
+            if (!firstName) {
+                document.getElementById('firstNameError').style.display = 'block';
+                isValid = false;
+            }
+            
+            const lastName = document.getElementById('lastName').value.trim();
+            if (!lastName) {
+                document.getElementById('lastNameError').style.display = 'block';
+                isValid = false;
+            }
+            
+            const dateOfBirth = document.getElementById('dateOfBirth').value;
+            if (!dateOfBirth) {
+                document.getElementById('dateOfBirthError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Contact Information Validation
+            const email = document.getElementById('email').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+            
+            const contactNumber = document.getElementById('contactNumber').value.trim();
+            if (!contactNumber || contactNumber.length < 10) {
+                document.getElementById('contactNumberError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Account Information Validation
+            const username = document.getElementById('username').value.trim();
+            if (!username || username.length < 4) {
+                document.getElementById('usernameError').style.display = 'block';
+                isValid = false;
+            }
+            
+            const password = document.getElementById('password').value;
+            if (!password || password.length < 8) {
+                document.getElementById('passwordError').style.display = 'block';
+                isValid = false;
+            }
+            
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').style.display = 'block';
+                isValid = false;
+            }
+            
+            const termsCheckbox = document.getElementById('termsCheckbox').checked;
+            if (!termsCheckbox) {
+                document.getElementById('termsError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // If validation passes
+            if (isValid) {
+                // Store user data (in a real application, this would be sent to a server)
+                const userData = {
+                    firstName: firstName,
+                    middleName: document.getElementById('middleName').value.trim(),
+                    lastName: lastName,
+                    dateOfBirth: dateOfBirth,
+                    email: email,
+                    contactNumber: contactNumber,
+                    username: username
+                };
+                
+                // Store in localStorage (for demo purposes)
+                localStorage.setItem('userData', JSON.stringify(userData));
+                
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Redirect to login page after 2 seconds
+                setTimeout(function() {
+                    window.location.href = 'login.html';
+                }, 2000);
+            } else {
+                // Scroll to first error
+                const firstError = document.querySelector('.error-message[style*="block"]');
+                if (firstError) {
+                    firstError.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
