@@ -16,7 +16,6 @@ const signupValidation = [
 ];
 
 const loginValidation = [
-    body('email').isEmail().normalizeEmail(),
     body('username').trim().notEmpty(),
     body('password').notEmpty()
 ];
@@ -80,7 +79,8 @@ router.post('/signup', signupValidation, async (req, res) => {
                 username: user.username,
                 email: user.email,
                 firstName: user.firstName,
-                lastName: user.lastName
+                lastName: user.lastName,
+                contactNumber: user.contactNumber
             }
         });
 
@@ -107,11 +107,10 @@ router.post('/login', loginValidation, async (req, res) => {
             });
         }
 
-        const { email, username, password } = req.body;
+        const { username, password } = req.body;
 
-        // Find user by email and username (both required)
+        // Find user by username
         const user = await User.findOne({ 
-            email,
             username
         });
 
@@ -151,7 +150,8 @@ router.post('/login', loginValidation, async (req, res) => {
                 username: user.username,
                 email: user.email,
                 firstName: user.firstName,
-                lastName: user.lastName
+                lastName: user.lastName,
+                contactNumber: user.contactNumber
             }
         });
 
