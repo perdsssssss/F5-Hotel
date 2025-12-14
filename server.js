@@ -27,10 +27,8 @@ if (!mongoURI) {
     process.exit(1);
 }
 
-mongoose.connect(mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+// FIXED: Removed deprecated options
+mongoose.connect(mongoURI)
 .then(() => {
     console.log('✓ Connected to MongoDB Atlas successfully');
 })
@@ -49,10 +47,23 @@ app.use((err, req, res, next) => {
     });
 });
 
-// Start server
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+
+// FIXED: Added error handling for EADDRINUSE
+const server = app.listen(PORT, () => {
     console.log(`✓ Server running on http://localhost:${PORT}`);
     console.log(`✓ Frontend: http://localhost:${PORT}/login.html`);
     console.log(`✓ API: http://localhost:${PORT}/api/auth`);
+}).on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+        console.error(`✗ Port ${PORT} is already in use!`);
+        console.error('  Solutions:');
+        console.error(`  1. Stop the process using port ${PORT}`);
+        console.error(`  2. Use a different port: PORT=3002 npm start`);
+        console.error(`  3. Run: taskkill /IM node.exe /F (Windows)`);
+        process.exit(1);
+    } else {
+        console.error('✗ Server error:', err.message);
+        process.exit(1);
+    }
 });
