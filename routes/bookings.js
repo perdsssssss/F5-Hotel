@@ -3,6 +3,7 @@ const router = express.Router();
 const { body, validationResult } = require('express-validator');
 const Booking = require('../models/Booking');
 const User = require('../models/User');
+const { generateBookingPdf } = require('../utils/pdfGenerator');
 
 // Validation middleware
 const bookingValidation = [
@@ -178,6 +179,20 @@ router.put('/:id/status', verifyAdminToken, async (req, res) => {
                 success: false,
                 message: 'Booking not found'
             });
+        }
+
+        // If booking confirmed, generate PDF (if not already generated)
+        if (status === 'Confirmed' && booking) {
+            try {
+                if (!booking.pdfUrl) {
+                    const pdfUrl = await generateBookingPdf(booking);
+                    booking.pdfUrl = pdfUrl;
+                    await booking.save();
+                }
+            } catch (pdfErr) {
+                console.error('PDF generation error:', pdfErr);
+                // Don't fail the status update if PDF generation fails
+            }
         }
 
         res.status(200).json({

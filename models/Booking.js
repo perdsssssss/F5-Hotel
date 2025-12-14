@@ -77,6 +77,11 @@ const bookingSchema = new mongoose.Schema({
         type: String,
         default: ''
     },
+    // Generated PDF URL (set when booking is confirmed)
+    pdfUrl: {
+        type: String,
+        default: ''
+    },
     
     // Timestamps
     createdAt: {

@@ -375,6 +375,13 @@
                                 <small style="color: #666; display: block; margin-bottom: 5px;">Total Amount</small>
                                 <div class="total-price">₱${booking.totalPrice.toLocaleString()}</div>
                             </div>
+                            <div>
+                                ${status === 'confirmed' && booking.pdfUrl ? `
+                                <a href="${booking.pdfUrl}" class="btn btn-primary" target="_blank" style="background:#dfa974;border:none;color:#fff;">Download PDF</a>
+                                ` : status === 'confirmed' && !booking.pdfUrl ? `
+                                <button class="btn btn-secondary" disabled style="background:#6c757d;border:none;color:#fff;">Preparing PDF...</button>
+                                ` : ''}
+                            </div>
                         </div>
                     </div>
                 `;
