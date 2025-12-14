@@ -13,6 +13,9 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
@@ -48,9 +51,10 @@
         }
 
         .stat-icon {
-            font-size: 48px;
-            color: #dfa974;
-            margin-bottom: 15px;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            display: block;
         }
 
         .stat-number {
@@ -124,6 +128,58 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
+        /* Header customization for admin icons */
+        .top-widget {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-right: 60px;
+        }
+
+        .inner-header .main-menu ul li a {
+            font-family: 'Taviraj', serif;
+        }
+
+        .top-info.address {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .admin-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #dfa974 0%, #c79861 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .top-info a#logoutBtn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Bring admin avatar and name closer */
+        .inner-header .top-info.address {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .inner-header .top-info.address span#adminNameHeader {
+            margin-left: 0 !important;
+            font-family: 'Taviraj', serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #ffffff;
+        }
     </style>
 </head>
 
@@ -142,11 +198,12 @@
                 </div>
                 <div class="top-widget">
                     <div class="top-info address">
-                        <span id="adminNameHeader">Administrator</span>
-                    </div>
-                    <div class="top-info">
-                        <a href="#" id="logoutBtn" style="color: #dfa974; text-decoration: none; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 600;">Logout</a>
-                    </div>
+                            <div class="admin-avatar" id="adminAvatar">A</div>
+                            <span id="adminNameHeader">Administrator</span>
+                        </div>
+                        <div class="top-info">
+                            <a href="#" id="logoutBtn" style="color: #dfa974; text-decoration: none; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 600;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
                 </div>
                 <div class="container">
                     <nav class="main-menu mobile-menu">
@@ -172,30 +229,76 @@
                 <div class="col-lg-12">
                     <div class="section-title">
                         <h1>Admin Dashboard</h1>
-                        <p>Welcome to the F5 Hotel Management System</p>
+                        <p>Welcome to the F5 Hotel Management System!</p>
                     </div>
                 </div>
             </div>
 
             <!-- Statistics Cards -->
             <div class="stats-container">
+                <!-- Total Users -->
                 <div class="stat-card">
-                    <div class="stat-icon"><i class="fa fa-users"></i></div>
+                    <svg class="stat-icon" viewBox="0 0 100 100">
+                        <circle cx="35" cy="30" r="12" fill="#CD9777"/>
+                        <path d="M 35 45 C 25 45 17 53 17 63 L 17 70 L 53 70 L 53 63 C 53 53 45 45 35 45 Z" fill="#CD9777"/>
+                        <circle cx="60" cy="35" r="10" fill="#CD9777" opacity="0.7"/>
+                        <path d="M 60 48 C 52 48 45 55 45 63 L 45 70 L 75 70 L 75 63 C 75 55 68 48 60 48 Z" fill="#CD9777" opacity="0.7"/>
+                        <circle cx="70" cy="25" r="8" fill="#CD9777" opacity="0.5"/>
+                        <path d="M 70 36 C 64 36 59 41 59 47 L 59 52 L 81 52 L 81 47 C 81 41 76 36 70 36 Z" fill="#CD9777" opacity="0.5"/>
+                    </svg>
                     <div class="stat-number" id="totalUsers">0</div>
                     <div class="stat-label">Total Users</div>
                 </div>
+
+                <!-- Administrators -->
                 <div class="stat-card">
-                    <div class="stat-icon"><i class="fa fa-user-shield"></i></div>
+                    <svg class="stat-icon" viewBox="0 0 100 100">
+                        <path fill="none" stroke="#CD9777" stroke-width="3" d="M 50 20 C 50 20 30 25 30 45 L 30 70 C 30 85 50 95 50 95 C 50 95 70 85 70 70 L 70 45 C 70 25 50 20 50 20 Z"/>
+                        <path fill="#CD9777" opacity="0.3" d="M 50 25 C 50 25 35 29 35 45 L 35 68 C 35 80 50 88 50 88 C 50 88 65 80 65 68 L 65 45 C 65 29 50 25 50 25 Z"/>
+                        <circle fill="#CD9777" cx="50" cy="55" r="15"/>
+                        <path d="M 50 43 L 53 52 L 62 52 L 55 58 L 58 67 L 50 61 L 42 67 L 45 58 L 38 52 L 47 52 Z" fill="white"/>
+                    </svg>
                     <div class="stat-number" id="totalAdmins">0</div>
                     <div class="stat-label">Administrators</div>
                 </div>
+
+                <!-- Total Bookings -->
                 <div class="stat-card">
-                    <div class="stat-icon"><i class="fa fa-calendar-check"></i></div>
+                    <svg class="stat-icon" viewBox="0 0 100 100">
+                        <rect x="25" y="30" width="50" height="55" rx="4" fill="none" stroke="#CD9777" stroke-width="3"/>
+                        <rect x="25" y="30" width="50" height="12" rx="4" fill="#CD9777"/>
+                        <rect x="35" y="23" width="4" height="12" rx="2" fill="#CD9777"/>
+                        <rect x="61" y="23" width="4" height="12" rx="2" fill="#CD9777"/>
+                        <circle cx="35" cy="52" r="2.5" fill="#CD9777" opacity="0.4"/>
+                        <circle cx="46" cy="52" r="2.5" fill="#CD9777" opacity="0.4"/>
+                        <circle cx="57" cy="52" r="2.5" fill="#CD9777" opacity="0.4"/>
+                        <circle cx="68" cy="52" r="2.5" fill="#CD9777" opacity="0.4"/>
+                        <circle cx="35" cy="63" r="2.5" fill="#CD9777" opacity="0.4"/>
+                        <circle cx="46" cy="63" r="2.5" fill="#CD9777" opacity="0.4"/>
+                        <circle cx="57" cy="63" r="2.5" fill="#CD9777" opacity="0.4"/>
+                        <circle cx="68" cy="63" r="2.5" fill="#CD9777" opacity="0.4"/>
+                        <circle cx="35" cy="74" r="2.5" fill="#CD9777" opacity="0.4"/>
+                        <circle cx="46" cy="74" r="2.5" fill="#CD9777" opacity="0.4"/>
+                        <circle cx="57" cy="74" r="2.5" fill="#CD9777" opacity="0.4"/>
+                        <circle cx="63" cy="70" r="11" fill="#CD9777"/>
+                        <path d="M 57 70 L 61 74 L 69 63" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                     <div class="stat-number" id="totalBookings">0</div>
                     <div class="stat-label">Total Bookings</div>
                 </div>
+
+                <!-- Available Rooms -->
                 <div class="stat-card">
-                    <div class="stat-icon"><i class="fa fa-hotel"></i></div>
+                    <svg class="stat-icon" viewBox="0 0 100 100">
+                        <rect x="20" y="35" width="60" height="45" rx="3" fill="none" stroke="#CD9777" stroke-width="3"/>
+                        <rect x="25" y="50" width="50" height="20" rx="2" fill="#CD9777" opacity="0.3"/>
+                        <rect x="30" y="45" width="15" height="8" rx="4" fill="#CD9777"/>
+                        <rect x="55" y="45" width="15" height="8" rx="4" fill="#CD9777"/>
+                        <circle cx="72" cy="42" r="3" fill="#CD9777"/>
+                        <line x1="30" y1="75" x2="70" y2="75" stroke="#CD9775" stroke-width="2"/>
+                        <rect x="28" y="73" width="5" height="7" fill="#CD9777"/>
+                        <rect x="67" y="73" width="5" height="7" fill="#CD9777"/>
+                    </svg>
                     <div class="stat-number" id="availableRooms">12</div>
                     <div class="stat-label">Available Rooms</div>
                 </div>
@@ -308,8 +411,11 @@
                 try {
                     const admin = JSON.parse(adminData);
                     const fullName = admin.firstName + ' ' + admin.lastName;
+                    const initials = (admin.firstName[0] + admin.lastName[0]).toUpperCase();
                     document.getElementById('adminNameHeader').textContent = fullName;
                     document.getElementById('adminName').textContent = fullName;
+                    const avatarEl = document.getElementById('adminAvatar');
+                    if (avatarEl) avatarEl.textContent = initials;
                 } catch (e) {
                     document.getElementById('adminNameHeader').textContent = 'Administrator';
                     document.getElementById('adminName').textContent = 'Administrator';
