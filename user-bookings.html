@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservations - F5 Hotel</title>
+    <title>F5 Hotel Booking System</title>
     
     <link href="https://fonts.googleapis.com/css?family=Taviraj:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
     
     <style>
         .bookings-section {
-            padding: 150px 0 80px;
+            padding: 50px 0 80px;
             min-height: 100vh;
         }
         
@@ -198,7 +198,7 @@
                             <li><a href="./about-us.html">About</a></li>
                             <li><a href="./rooms.html">Rooms</a></li>
                             <li class="active"><a href="./user-bookings.html">Reservations</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="./contact.html">Profile</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -217,7 +217,7 @@
                 </div>
                 <div class="page-nav">
                     <a href="./rooms.html" class="left-nav"><i class="lnr lnr-arrow-left"></i> Rooms</a>
-                    <a href="./contact.html" class="right-nav">Contact <i class="lnr lnr-arrow-right"></i></a>
+                    <a href="./contact.html" class="right-nav">Profile <i class="lnr lnr-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -247,13 +247,17 @@
         const userData = JSON.parse(localStorage.getItem('userData') || '{}');
         const userId = userData.id || userData._id;
         
-        if (!userId) {
+        console.log('User Data:', userData);
+        console.log('User ID:', userId);
+        
+        if (!userId || userId === 'undefined') {
             alert('Please login to view your reservations');
             window.location.href = 'login.html';
         }
 
         // Display user name
-        document.getElementById('userName').innerHTML = `<i class="fas fa-user" style="margin-right: 8px;"></i>${userData.firstName || userData.username || 'User'}`;
+        const fullName = userData.firstName && userData.lastName ? `${userData.firstName} ${userData.lastName}` : (userData.username || 'User');
+        document.getElementById('userName').innerHTML = `<i class="fas fa-user" style="margin-right: 8px;"></i>${fullName}`;
 
         // Format date
         function formatDate(dateString) {
